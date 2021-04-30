@@ -8,13 +8,13 @@ with open("books.json") as fichero:
 
 @app.route('/',methods=["GET","POST"])
 def inicio():
-	return render_template("inicio.html",libros=datos)
+	return render_template("index.html",libros=datos)
 
 @app.route('/libro/<isbn>',methods=["GET","POST"])
 def libros(isbn):
     for libro in datos:
         if "isbn" in libro.keys() and isbn==libro["isbn"]:
-	        return render_template("libros.html",libro=libro)
+	        return render_template("biblioteca.html",libro=libro)
     abort(404)
 
 @app.route('/categoria/<categoria>',methods=["GET","POST"])
@@ -25,4 +25,5 @@ def categoria(categoria):
     abort(404)
 
 port=os.environ["PORT"]
+
 app.run('0.0.0.0',int(port),debug=False)
