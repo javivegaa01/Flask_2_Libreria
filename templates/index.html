@@ -2,12 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Página Principal</title>
+    <title>TAREA: Programa Librería</title>
 </head>
 <body>
-	<h1>Hola, soy Javier Vega</h1>
-    <ol>
-        <li><a href="/biblioteca">Enlace1</a></li>
-    </ol>
+    <h1>Javier Vega Correa</h1>
+    <h1>Biblioteca</h1>
+    <ul>
+		{% for libro in libros -%}
+			<li><a href="/libro/{{libro.isbn}}">{{libro.title}}</a></li>
+		{% endfor -%}
+	</ul>
 </body>
 </html>
