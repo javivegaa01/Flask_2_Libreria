@@ -2,31 +2,12 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Libros</title>
+        <title>{{categoria}}</title>
     </head>
     <body>
-        <h1>{{libro.title}}</h1>
-        {% if libro.thumbnailUrl -%}
-            <img src="{{libro.thumbnailUrl}}" alt="Imagen"/>
-        {% endif -%}
-        {% if libro.status=="MEAP" %}
-            <h2>ESTE LIBRO NO SE HA PUBLICADO.</h2>
-        {% endif -%}
-        <p><strong>Número de páginas:</strong> {{libro.pageCount}}</p>
-        {% if libro.shortDescription -%}
-            <p><strong>Descripción:</strong> {{libro.shortDescription}}</p>
-        {% endif -%}
-        <p><strong>Autores:</strong></p>
-            {% for autor in libro.authors -%}
-            <ul>
-                <li><p>{{autor}}</p></li>
-            </ul>
-            {% endfor -%}
-        <p><strong>Categorías:</strong></p>
-            {% for categoria in libro.categories -%}
-            <ul>
-                <li><a href="/categoria/{{categoria}}">{{categoria}}</a></li>
-            </ul>
-            {% endfor -%}
+        <h2>{{categoria}}</h2>
+        <ul>
+        </ul>
+        <a href="/">Inicio</a>
     </body>
 </html>
